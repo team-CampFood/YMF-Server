@@ -32,5 +32,7 @@ public class SingingMateDTO {
     @ApiModelProperty(value = "장소", position = 6)
     private String location;
 
+    @ApiModelProperty(value = "신청상태", position = 7)
+    private BaseState state;
 
 }
