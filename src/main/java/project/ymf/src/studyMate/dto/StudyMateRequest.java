@@ -1,7 +1,10 @@
 package project.ymf.src.studyMate.dto;
 
+import lombok.Getter;
+
 import java.time.LocalDateTime;
 
+@Getter
 public class StudyMateRequest {
 
     private String title;
