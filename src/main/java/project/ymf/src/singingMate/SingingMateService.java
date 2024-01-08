@@ -1,6 +1,7 @@
 package project.ymf.src.singingMate;
 
 import org.springframework.stereotype.Service;
+import project.ymf.common.result.ResultCode;
 import project.ymf.src.singingMate.dto.*;
 import project.ymf.src.singingMate.dto.SingingMateDTO;
 import project.ymf.src.singingMate.response.SingingMateInfoResponse;
@@ -18,7 +19,7 @@ public class SingingMateService {
     public SingingMateInfoDTO getSingingInfo(Long singingId) {
     }
 
-    public void applySinging(Long singingId, SingingMateApplyRequest request) {
+    public ResultCode applySinging(Long singingId, SingingMateApplyRequest request) {
     }
 
     public void deleteSinging(Long singingId) {
@@ -27,7 +28,7 @@ public class SingingMateService {
     public void completeSinging(Long singingId) {
     }
 
-    public void acceptSinging(Long singingId, SingingMateAcceptRequest request) {
+    public ResultCode acceptSinging(Long singingId, SingingMateAcceptRequest request) {
     }
     public List<SingingMateApplyDTO> getSingingSubs(Long singingId) {
     }

@@ -1,6 +1,7 @@
 package project.ymf.src.purchaseMate;
 
 import org.springframework.stereotype.Service;
+import project.ymf.common.result.ResultCode;
 import project.ymf.src.purchaseMate.dto.*;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class PurchaseMateService {
     public PurchaseMateInfoDTO getPurchaseInfo(Long purchaseId) {
     }
 
-    public void applyPurchase(Long purchaseId, PurchaseMateApplyRequest request) {
+    public ResultCode applyPurchase(Long purchaseId, PurchaseMateApplyRequest request) {
     }
 
     public void deletePurchase(Long purchaseId) {
@@ -28,7 +29,7 @@ public class PurchaseMateService {
     public List<PurchaseMateApplyDTO> getPurchaseSubs(Long purchaseId) {
     }
 
-    public void acceptPurchase(Long purchaseId, PurchaseMateAcceptRequest request) {
+    public ResultCode acceptPurchase(Long purchaseId, PurchaseMateAcceptRequest request) {
     }
 
     public List<PurchaseMateDTO> getAllPurchase() {

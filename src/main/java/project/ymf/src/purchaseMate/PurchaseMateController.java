@@ -25,7 +25,7 @@ public class PurchaseMateController {
     @PostMapping()
     public ResponseEntity<ResultResponse> postPurchase(@RequestBody PurchaseMateRequest request){
         purchaseMateService.postPurchase(request);
-        return ResponseEntity.ok(ResultResponse.of(ResultCode.Example));
+        return ResponseEntity.ok(ResultResponse.of(ResultCode.POST_STUDY_MATE_SUCCESS));
     }
 
     @ApiOperation(value = "공동구매 메이트 모집글 수정하기")
@@ -33,51 +33,51 @@ public class PurchaseMateController {
     public ResponseEntity<ResultResponse> editPurchase(@PathVariable Long purchaseId,
                                                       @RequestBody PurchaseMateRequest request){
         purchaseMateService.editPurchase(purchaseId, request);
-        return ResponseEntity.ok(ResultResponse.of(ResultCode.Example));
+        return ResponseEntity.ok(ResultResponse.of(ResultCode.PUT_PURCHASE_MATE_SUCCESS));
     }
 
     @ApiOperation(value = "공동구매 메이트 모집글 자세히보기")
     @GetMapping("/{purchaseId}")
     public ResponseEntity<PurchaseMateInfoResponse> getPurchaseInfo(@PathVariable Long purchaseId){
         PurchaseMateInfoDTO data = purchaseMateService.getPurchaseInfo(purchaseId);
-        return ResponseEntity.ok(PurchaseMateInfoResponse.of(ResultCode.Example, data));
+        return ResponseEntity.ok(PurchaseMateInfoResponse.of(ResultCode.GET_PURCHASE_MATE_INFO_SUCCESS, data));
     }
 
     @ApiOperation(value = "공동구매 메이트 신청/취소하기")
     @PostMapping("/apply/{purchaseId}")
     public ResponseEntity<ResultResponse> applyPurchase(@PathVariable Long purchaseId,
                                                        @RequestBody PurchaseMateApplyRequest request){
-        purchaseMateService.applyPurchase(purchaseId,request);
-        return ResponseEntity.ok(ResultResponse.of(ResultCode.Example));
+        ResultCode result = purchaseMateService.applyPurchase(purchaseId,request);
+        return ResponseEntity.ok(ResultResponse.of(result));
     }
 
     @ApiOperation(value = "공동구매 메이트 모집글 삭제하기")
     @DeleteMapping("/{purchaseId}")
     public ResponseEntity<ResultResponse> deletePurchase(@PathVariable Long purchaseId){
         purchaseMateService.deletePurchase(purchaseId);
-        return ResponseEntity.ok(ResultResponse.of(ResultCode.Example));
+        return ResponseEntity.ok(ResultResponse.of(ResultCode.DELETE_PURCHASE_MATE_SUCCESS));
     }
 
     @ApiOperation(value = "공동구매 메이트 모집 완료하기")
     @PostMapping("/complete/{purchaseId}")
     public ResponseEntity<ResultResponse> completePurchase(@PathVariable Long purchaseId){
         purchaseMateService.completePurchase(purchaseId);
-        return ResponseEntity.ok(ResultResponse.of(ResultCode.Example));
+        return ResponseEntity.ok(ResultResponse.of(ResultCode.COMPLETE_PURCHASE_MATE_SUCCESS));
     }
 
     @ApiOperation(value = "공동구매 메이트 신청자목록 조회하기")
     @GetMapping("/apply/{purchaseId}")
     public ResponseEntity<PurchaseMateApplyListResponse> getPurchaseSubs(@PathVariable Long purchaseId){
         List<PurchaseMateApplyDTO> data = purchaseMateService.getPurchaseSubs(purchaseId);
-        return ResponseEntity.ok(PurchaseMateApplyListResponse.of(ResultCode.Example, data));
+        return ResponseEntity.ok(PurchaseMateApplyListResponse.of(ResultCode.GET_PURCHASE_MATE_APPLIES_SUCCESS, data));
     }
 
     @ApiOperation(value = "공동구매 메이트 신청자 수락/취소하기")
     @PostMapping("/accept/{purchaseId}")
     public ResponseEntity<ResultResponse> acceptPurchase(@PathVariable Long purchaseId,
                                                         @RequestBody PurchaseMateAcceptRequest request){
-        purchaseMateService.acceptPurchase(purchaseId,request);
-        return ResponseEntity.ok(ResultResponse.of(ResultCode.Example));
+        ResultCode result = purchaseMateService.acceptPurchase(purchaseId,request);
+        return ResponseEntity.ok(ResultResponse.of(result));
 
     }
 
@@ -85,20 +85,20 @@ public class PurchaseMateController {
     @GetMapping()
     public ResponseEntity<PurchaseMateListResponse> getAllPurchase(){
         List<PurchaseMateDTO>data = purchaseMateService.getAllPurchase();
-        return ResponseEntity.ok(PurchaseMateListResponse.of(ResultCode.Example, data));
+        return ResponseEntity.ok(PurchaseMateListResponse.of(ResultCode.GET_MY_PURCHASE_MATE_LIST_SUCCESS, data));
     }
 
     @ApiOperation(value = "공동구매 메이트 모집글 검색하기")
     @GetMapping("/search")
     public ResponseEntity<PurchaseMateListResponse> getSearchedPurchase(@RequestParam String keyword){
         List<PurchaseMateDTO>data = purchaseMateService.getSearchedPurchase(keyword);
-        return ResponseEntity.ok(PurchaseMateListResponse.of(ResultCode.Example,data));
+        return ResponseEntity.ok(PurchaseMateListResponse.of(ResultCode.GET_SEARCHED_PURCHASE_MATE_LIST_SUCCESS,data));
     }
 
     @ApiOperation(value = "나의 공동구매 메이트 조회하기")
     @GetMapping("/mine")
     public ResponseEntity<PurchaseMateListResponse> getMyPurchase(){
         List<PurchaseMateDTO>data = purchaseMateService.getMyPurchase();
-        return ResponseEntity.ok(PurchaseMateListResponse.of(ResultCode.Example,data));
+        return ResponseEntity.ok(PurchaseMateListResponse.of(ResultCode.GET_MY_PURCHASE_MATE_LIST_SUCCESS,data));
     }
 }

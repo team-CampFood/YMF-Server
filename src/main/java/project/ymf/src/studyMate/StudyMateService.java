@@ -1,6 +1,7 @@
 package project.ymf.src.studyMate;
 
 import org.springframework.stereotype.Service;
+import project.ymf.common.result.ResultCode;
 import project.ymf.src.studyMate.dto.*;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class StudyMateService {
 
     public StudyMateInfoDTO getStudyInfo(Long studyId) {
     }
-    public void applyStudy(Long studyId, StudyMateApplyRequest request) {
+    public ResultCode applyStudy(Long studyId, StudyMateApplyRequest request) {
     }
 
     public void deleteStudy(Long studyId) {
@@ -27,7 +28,7 @@ public class StudyMateService {
     public List<StudyMateApplyDTO> getStudySubs(Long studyId) {
     }
 
-    public void acceptStudy(Long studyId, StudyMateAcceptRequest request) {
+    public ResultCode acceptStudy(Long studyId, StudyMateAcceptRequest request) {
     }
 
     public List<StudyMateDTO> getAllStudy() {
