@@ -67,8 +67,8 @@ public class PurchaseMateController {
 
     @ApiOperation(value = "공동구매 메이트 신청자목록 조회하기")
     @GetMapping("/apply/{purchaseId}")
-    public ResponseEntity<PurchaseMateApplyListResponse> getPurchaseSubs(@PathVariable Long purchaseId){
-        List<PurchaseMateApplyDTO> data = purchaseMateService.getPurchaseSubs(purchaseId);
+    public ResponseEntity<PurchaseMateApplyListResponse> getPurchaseApplies(@PathVariable Long purchaseId){
+        List<PurchaseMateApplyDTO> data = purchaseMateService.getPurchaseApplies(purchaseId);
         return ResponseEntity.ok(PurchaseMateApplyListResponse.of(ResultCode.GET_PURCHASE_MATE_APPLIES_SUCCESS, data));
     }
 

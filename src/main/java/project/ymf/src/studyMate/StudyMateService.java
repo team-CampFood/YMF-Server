@@ -25,7 +25,7 @@ public class StudyMateService {
     public void completeStudy(Long studyId) {
     }
 
-    public List<StudyMateApplyDTO> getStudySubs(Long studyId) {
+    public List<StudyMateApplyDTO> getStudyApplies(Long studyId) {
     }
 
     public ResultCode acceptStudy(Long studyId, StudyMateAcceptRequest request) {

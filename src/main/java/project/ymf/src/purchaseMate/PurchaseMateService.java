@@ -26,7 +26,7 @@ public class PurchaseMateService {
     public void completePurchase(Long purchaseId) {
     }
 
-    public List<PurchaseMateApplyDTO> getPurchaseSubs(Long purchaseId) {
+    public List<PurchaseMateApplyDTO> getPurchaseApplies(Long purchaseId) {
     }
 
     public ResultCode acceptPurchase(Long purchaseId, PurchaseMateAcceptRequest request) {

@@ -30,7 +30,7 @@ public class SingingMateService {
 
     public ResultCode acceptSinging(Long singingId, SingingMateAcceptRequest request) {
     }
-    public List<SingingMateApplyDTO> getSingingSubs(Long singingId) {
+    public List<SingingMateApplyDTO> getSingingApplies(Long singingId) {
     }
 
     public List<SingingMateDTO> getSearchedSinging(String keyword) {

@@ -67,8 +67,8 @@ public class SingingMateController {
 
     @ApiOperation(value = "노래방 메이트 신청자목록 조회하기")
     @GetMapping("/apply/{singingId}")
-    public ResponseEntity<SingingMateApplyListResponse> getSingingSubs(@PathVariable Long singingId){
-        List<SingingMateApplyDTO> data = singingMateService.getSingingSubs(singingId);
+    public ResponseEntity<SingingMateApplyListResponse> getSingingApplies(@PathVariable Long singingId){
+        List<SingingMateApplyDTO> data = singingMateService.getSingingApplies(singingId);
         return ResponseEntity.ok(SingingMateApplyListResponse.of(ResultCode.GET_SINGING_MATE_APPLIES_SUCCESS, data));
     }
 

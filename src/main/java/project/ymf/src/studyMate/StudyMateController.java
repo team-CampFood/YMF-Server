@@ -68,8 +68,8 @@ public class StudyMateController {
 
     @ApiOperation(value = "스터디 메이트 신청자목록 조회하기")
     @GetMapping("/apply/{studyId}")
-    public ResponseEntity<StudyMateApplyListResponse> getStudySubs(@PathVariable Long studyId){
-        List<StudyMateApplyDTO> data = studyMateService.getStudySubs(studyId);
+    public ResponseEntity<StudyMateApplyListResponse> getStudyApplies(@PathVariable Long studyId){
+        List<StudyMateApplyDTO> data = studyMateService.getStudyApplies(studyId);
         return ResponseEntity.ok(StudyMateApplyListResponse.of(ResultCode.GET_STUDY_MATE_APPLIES_SUCCESS, data));
     }
 
