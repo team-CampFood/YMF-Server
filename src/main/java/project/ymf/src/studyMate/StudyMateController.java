@@ -30,7 +30,7 @@ public class StudyMateController {
     }
 
     @ApiOperation(value = "스터디 메이트 모집글 수정하기")
-    @PostMapping("/{studyId}")
+    @PutMapping("/{studyId}")
     public ResponseEntity<ResultResponse> editStudy(@PathVariable Long studyId,
                                                       @RequestBody StudyMateRequest request){
         studyMateService.editStudy(studyId, request);

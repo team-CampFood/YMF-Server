@@ -29,7 +29,7 @@ public class SingingMateController {
     }
 
     @ApiOperation(value = "노래방 메이트 모집글 수정하기")
-    @PostMapping("/{singingId}")
+    @PutMapping("/{singingId}")
     public ResponseEntity<ResultResponse> editSinging(@PathVariable Long singingId,
                                                       @RequestBody SingingMateRequest request){
         singingMateService.editSinging(singingId, request);

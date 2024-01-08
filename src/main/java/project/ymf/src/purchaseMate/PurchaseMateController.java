@@ -29,7 +29,7 @@ public class PurchaseMateController {
     }
 
     @ApiOperation(value = "공동구매 메이트 모집글 수정하기")
-    @PostMapping("/{purchaseId}")
+    @PutMapping("/{purchaseId}")
     public ResponseEntity<ResultResponse> editPurchase(@PathVariable Long purchaseId,
                                                       @RequestBody PurchaseMateRequest request){
         purchaseMateService.editPurchase(purchaseId, request);
