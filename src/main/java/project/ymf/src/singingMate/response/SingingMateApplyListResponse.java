@@ -5,7 +5,6 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import project.ymf.common.result.ResultCode;
 import project.ymf.src.singingMate.dto.SingingMateApplyDTO;
-import project.ymf.src.singingMate.dto.SingingMateDTO;
 
 import java.util.List;
 

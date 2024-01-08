@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import project.ymf.common.result.ResultCode;
 import project.ymf.src.singingMate.dto.*;
 import project.ymf.src.singingMate.dto.SingingMateDTO;
-import project.ymf.src.singingMate.response.SingingMateInfoResponse;
 
 import java.util.List;
 
