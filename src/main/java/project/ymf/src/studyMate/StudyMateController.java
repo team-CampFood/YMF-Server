@@ -60,7 +60,7 @@ public class StudyMateController {
     }
 
     @ApiOperation(value = "스터디 메이트 모집 완료하기")
-    @PostMapping("/apply/{studyId}")
+    @PostMapping("/complete/{studyId}")
     public ResponseEntity<ResultResponse> completeStudy(@PathVariable Long studyId){
         studyMateService.completeStudy(studyId);
         return ResponseEntity.ok(ResultResponse.of(ResultCode.Example));

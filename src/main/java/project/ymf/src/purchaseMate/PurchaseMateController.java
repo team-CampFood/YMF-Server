@@ -59,7 +59,7 @@ public class PurchaseMateController {
     }
 
     @ApiOperation(value = "공동구매 메이트 모집 완료하기")
-    @PostMapping("/apply/{purchaseId}")
+    @PostMapping("/complete/{purchaseId}")
     public ResponseEntity<ResultResponse> completePurchase(@PathVariable Long purchaseId){
         purchaseMateService.completePurchase(purchaseId);
         return ResponseEntity.ok(ResultResponse.of(ResultCode.Example));

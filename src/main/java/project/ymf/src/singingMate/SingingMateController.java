@@ -59,7 +59,7 @@ public class SingingMateController {
     }
 
     @ApiOperation(value = "노래방 메이트 모집 완료하기")
-    @PostMapping("/apply/{singingId}")
+    @PostMapping("/complete/{singingId}")
     public ResponseEntity<ResultResponse> completeSinging(@PathVariable Long singingId){
         singingMateService.completeSinging(singingId);
         return ResponseEntity.ok(ResultResponse.of(ResultCode.Example));
